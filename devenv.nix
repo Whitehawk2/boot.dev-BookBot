@@ -10,14 +10,10 @@
   # https://devenv.sh/scripts/
   #scripts.hello.exec = "echo hello from $GREET";
 
-  #enterShell = ''
-    #eval "$(gh completion -s zsh)"
-    #alias ghce='gh copilot explain'
-    #alias ghcs='gh copilot suggest'
-    #exec zsh
-  #  hello
-  #  git --version
-  #'';
+  enterShell = ''
+  [[ -d ../BookBotvenv ]] || python3 -m venv ../BookBotvenv
+  source ../BookBotvenv/bin/activate
+  '';
 
   # https://devenv.sh/tests/
   #enterTest = ''
@@ -30,6 +26,9 @@
 
   # https://devenv.sh/languages/
   # languages.nix.enable = true;
+  #languages.python.enable = true;
+  #languages.python.venv.enable = true;
+  #languages.python.venv.quiet.enable = true;
 
   # https://devenv.sh/pre-commit-hooks/
   # pre-commit.hooks.shellcheck.enable = true;
