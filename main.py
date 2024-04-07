@@ -42,9 +42,9 @@ def count_letters(book: str) -> dict:
 def print_report(bookname: str, wordcount: int, letter_segmentation: list[dict]) -> int:
     """Pretty prints a report based on instructions format"""
     print(f"--- Begin report of {bookname} ---")
-    print(f"{wordcount} words have been found in {bookname}.")
+    print(f"{wordcount} words have been found in {bookname}.\n")
     for letter in letter_segmentation:
-        print(f'the "{letter["char"]}" was found {letter["count"]} times')
+        print(f'the {letter["char"]} was found {letter["count"]} times')
     print("--- End report --- ")
 
     return 0
@@ -52,7 +52,9 @@ def print_report(bookname: str, wordcount: int, letter_segmentation: list[dict])
 
 def main():  # noqa: missing-function-docstring
     try:
-        bname = input("Enter a name of text/book to analyze: ") # TODO: add input validation
+        bname = input(
+            "Enter a name of text/book to analyze: "
+        )  # TODO: add input validation
         book = read_book(bname)
         word_count = count_words(book)
         char_count = count_letters(book)
@@ -64,7 +66,7 @@ def main():  # noqa: missing-function-docstring
             reverse=True,
         )
         # print(sorted_dict)
-        print_report(book, word_count, sorted_dict)
+        print_report(bname, word_count, sorted_dict)
 
         return 0
 
