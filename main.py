@@ -52,7 +52,8 @@ def print_report(bookname: str, wordcount: int, letter_segmentation: list[dict])
 
 def main():  # noqa: missing-function-docstring
     try:
-        book = read_book("frankenstein")
+        bname = input("Enter a name of text/book to analyze: ") # TODO: add input validation
+        book = read_book(bname)
         word_count = count_words(book)
         char_count = count_letters(book)
 
