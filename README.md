@@ -8,4 +8,9 @@ This readme will be expanded upon as the project gets built.
 
 - devops side :)
 
-----------------
+## Current status
+
+Finished mandatory course requirements :)
+Need to revisit this later to hack somesort of CI lol
+
+---
